@@ -9,7 +9,12 @@ let bg = document.querySelector("body");
 
 function checkWeather() {
   cityName = document.querySelector(".city-name-input").value;
-  fetchWeather(cityName);
+
+  if (cityName === "") {
+    return alert("Enter city name");
+  } else {
+    fetchWeather(cityName);
+  }
 
   document.querySelector(".city-name-input").value = "";
 }
